@@ -9,6 +9,11 @@ VERIFY_TOKEN = os.getenv('VERIFY_TOKEN')
 app = Flask(__name__)
 
 
+@app.route('/', methods=['GET'])
+def root():
+    return "Hi, my name is Cralb!"
+
+
 # Adds support for GET requests to our webhook
 @app.route('/webhook', methods=['GET'])
 def webhook():
